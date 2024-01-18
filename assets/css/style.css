@@ -18,23 +18,34 @@
     --instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
     --youtube: hsl(348, 97%, 39%);
 
-    /* Light Theme Toggle*/--toggle-light: hsl(230, 22%, 74%);
-    
-    /* Dark Theme Toggle */--toggle-dark: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    /* Light Theme Toggle*/
+    --toggle-light: hsl(230, 22%, 74%);
+
+    /* Dark Theme Toggle */
+    --toggle-dark: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
 
     /* Light Theme Colors */
     /* White= BG */
-    /* Top BG Pattern */--very-pale-blue: hsl(225, 100%, 98%);
-    /* Card BG */--light-grayish-blue: hsl(227, 47%, 96%);
-    /* Text */--dark-grayish-blue: hsl(228, 12%, 44%);
-    /* Text */--very-dark-blue-text: hsl(230, 17%, 14%);
-    
+    /* Top BG Pattern */
+    --very-pale-blue: hsl(225, 100%, 98%);
+    /* Card BG */
+    --light-grayish-blue: hsl(227, 47%, 96%);
+    /* Text */
+    --dark-grayish-blue: hsl(228, 12%, 44%);
+    /* Text */
+    --very-dark-blue-text: hsl(230, 17%, 14%);
+
     /* Dark Theme Colors */
-    /* BG */--very-dark-blue: hsl(230, 17%, 14%);
-    /* Top BG Pattern */--very-dark-blue-top: hsl(232, 19%, 15%);
-    /* Card BG */--dark-desaturated-blue: hsl(228, 28%, 20%);
-    /* Text */--desaturated-blue: hsl(228, 34%, 66%);
-    /* Text */--white: hsl(0, 0%, 100%);
+    /* BG */
+    --very-dark-blue: hsl(230, 17%, 14%);
+    /* Top BG Pattern */
+    --very-dark-blue-top: hsl(232, 19%, 15%);
+    /* Card BG */
+    --dark-desaturated-blue: hsl(228, 28%, 20%);
+    /* Text */
+    --desaturated-blue: hsl(228, 34%, 66%);
+    /* Text */
+    --white: hsl(0, 0%, 100%);
 
 }
 
@@ -79,22 +90,92 @@ header .total {
     border-bottom: solid 1px var(--dark-grayish-blue);
 }
 
+header .toggle-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
 header .toggle-btn p {
     color: var(--dark-grayish-blue);
     font-weight: 700;
     font-size: 14px;
 }
+
+/* code from w3school, credit in README file */
+/* https://www.w3schools.com/howto/howto_css_switch.asp */
+header .toggle-btn .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+header .toggle-btn .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+header .toggle-btn .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+header .toggle-btn .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    /* -webkit-transition: .4s; */
+    transition: .4s;
+}
+
+header .toggle-btn .switch input:checked+.slider {
+    background-color: #2196F3;
+}
+
+header .toggle-btn .switch input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+header .toggle-btn .switch input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* round slider */
+header .toggle-btn .switch .slider.round {
+    border-radius: 34px;
+}
+
+header .toggle-btn .switch .slider.round:before {
+    border-radius: 50%;
+}
+/* code from w3school, credit in README */
 /* header ending */
 
 /* --------------------------- */
 
 /* first-row beginning */
 .first-row {
-    margin-bottom: 2.5rem;
+    margin: 1.5rem 0 2.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .first-row .card {
     border-radius: 7px;
     padding: 1.5rem 2rem;
@@ -120,7 +201,7 @@ header .toggle-btn p {
 }
 
 .first-row .insta-gradient {
-    background:linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     width: 320px;
     border-radius: 7px;
 }
@@ -189,8 +270,9 @@ header .toggle-btn p {
 .first-row .card .red {
     color: var(--bright-red);
     font-size: .70rem;
-    font-weight: 700; 
+    font-weight: 700;
 }
+
 /* first-row ending */
 
 /* ---------------------------------*/
@@ -202,6 +284,7 @@ header .toggle-btn p {
     align-items: center;
 
 }
+
 .second-row h2 {
     width: 320px;
 }
@@ -210,6 +293,7 @@ header .toggle-btn p {
     color: var(--dark-grayish-blue);
     margin-bottom: .50rem;
 }
+
 .second-row .box {
     cursor: pointer;
     background-color: var(--very-pale-blue);
